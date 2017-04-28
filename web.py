@@ -121,7 +121,7 @@ def index():
         url,
         '--report-save-path={}'.format(SCANNER_REPORT_PATH),
         '--output-only-positives',
-        '--plugin="email_notify:{}"'.format(email_plugin_args)] + options
+        '--plugin=email_notify:{}'.format(email_plugin_args)] + options
 
     task_id = run_scan.delay(args)
     return redirect(url_for('status', task_id=task_id))
