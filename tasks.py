@@ -3,8 +3,8 @@ import subprocess
 from celery import Celery
 
 
-CELERY_BROKER_URL = os.envvar['CELERY_BROKER_URL']
-CELERY_RESULT_BACKEND = os.envvar['CELERY_RESULT_BACKEND']
+CELERY_BROKER_URL = os.environ['CELERY_BROKER_URL']
+CELERY_RESULT_BACKEND = os.environ['CELERY_RESULT_BACKEND']
 
 celery = Celery('arachni')
 celery.conf.broker_url = CELERY_BROKER_URL
